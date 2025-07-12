@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vastraa - Your Fashion Partner</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="chatbot.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+  <div class="header-branding">
+    <div class="logo">
+      <span class="logo-text">Vastraa</span>
+      <span class="logo-subtext">Fashion</span>
+    </div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+      <div class="hamburger">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </div>
+    </button>
+  </div>
+
+  <div class="search-container">
+    <input type="text" placeholder="Search for fashion, brands and more..." class="search-input" />
+    <button class="search-btn" aria-label="Search">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
+
+  <div class="user-actions">
+    <a href="register.html" class="user-action" aria-label="Account">
+  <i class="far fa-user"></i>
+  <span class="action-text">Account</span>
+</a>
+
+    <a href="#" class="user-action" aria-label="Wishlist">
+      <i class="far fa-heart"></i>
+      <span class="action-text">Wishlist</span>
+    </a>
+    <a href="cart.html" class="user-action cart" aria-label="Cart">
+  <i class="fas fa-shopping-cart"></i>
+  <span class="action-text">Cart</span>
+  <span class="cart-count">0</span>
+</a>
+
+
+
+  </div>
+</div>
+  </header>
+
+  <nav class="nav-categories" id="navCategories">
+    <ul>
+      <li><a href="#">All</a></li>
+      <li><a href="#">Men</a></li>
+      <li><a href="#">Women</a></li>
+      <li><a href="#">Kids</a></li>
+      <li><a href="#">Ethnic</a></li>
+      <li><a href="#">Sportswear</a></li>
+      <li><a href="#">Western</a></li>
+      <li><a href="#">T-Shirts</a></li>
+    </ul>
+  </nav>
+
+  <section class="product-grid">
+  <div class="product-gallery">
+  <div class="product-card">
+    <div class="product-badge">New</div>
+    <div class="product-image-container">
+      <img src="https://i.pinimg.com/originals/fa/49/57/fa4957f299b6977b61d727a7b50646ec.jpg" alt="Designer Saree" class="product-image" />
+    </div>
+    <div class="product-details">
+      <h3 class="product-title">Designer Saree</h3>
+      <div class="price-section">
+        <p class="product-price">$49.99</p>
+        <p class="original-price">$69.99</p>
+      </div>
+      <div class="rating">★★★★☆ <span class="review-count">(128)</span></div>
+      <button class="add-to-cart-btn" onclick="addToCartAndRedirect('Designer Saree')">
+  <i class="fas fa-shopping-cart"></i> Add to Cart
+</button>
+<button class="wishlist-btn" onclick="toggleWishlist('Designer Saree')" title="Add to Wishlist">
+  <i class="far fa-heart"></i>
+</button>
+
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-image-container">
+      <img src="https://i.pinimg.com/236x/6d/7b/01/6d7b0111b0dc33f65c4518664161b811.jpg" alt="Casual Shirt" class="product-image" />
+    </div>
+    <div class="product-details">
+      <h3 class="product-title">Casual Shirt</h3>
+      <div class="price-section">
+        <p class="product-price">$19.99</p>
+      </div>
+      <div class="rating">★★★★★ <span class="review-count">(256)</span></div>
+      <button class="add-to-cart-btn" onclick="addToCartAndRedirect('Casual Shirt')">
+  <i class="fas fa-shopping-cart"></i> Add to Cart
+</button>
+<button class="wishlist-btn" onclick="toggleWishlist('Designer Saree')" title="Add to Wishlist">
+  <i class="far fa-heart"></i>
+</button>
+
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-badge sale">Sale</div>
+    <div class="product-image-container">
+      <img src="https://i.pinimg.com/736x/6b/58/0d/6b580d67912023eb38d053f38c378cb9.jpg" alt="Denim Jacket" class="product-image" />
+    </div>
+    <div class="product-details">
+      <h3 class="product-title">Denim Jacket</h3>
+      <div class="price-section">
+        <p class="product-price">$39.99</p>
+      </div>
+      <div class="rating">★★★☆☆ <span class="review-count">(87)</span></div>
+      <button class="add-to-cart-btn" onclick="addToCartAndRedirect('Denim Jacket')">
+  <i class="fas fa-shopping-cart"></i> Add to Cart
+</button>
+<button class="wishlist-btn" onclick="toggleWishlist('Designer Saree')" title="Add to Wishlist">
+  <i class="far fa-heart"></i>
+</button>
+
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-image-container">
+      <img src="https://i.pinimg.com/736x/02/a5/15/02a5150fdb2455f4cdc8d8dbcfd17695.jpg" alt="Ethnic Lehenga" class="product-image" />
+    </div>
+    <div class="product-details">
+      <h3 class="product-title">Ethnic Lehenga</h3>
+      <div class="price-section">
+        <p class="product-price">$59.99</p>
+      </div>
+      <div class="rating">★★★★☆ <span class="review-count">(192)</span></div>
+      <button class="add-to-cart-btn" onclick="addToCartAndRedirect('Ethnic Lehenga')">
+  <i class="fas fa-shopping-cart"></i> Add to Cart
+</button>
+<button class="wishlist-btn" onclick="toggleWishlist('Designer Saree')" title="Add to Wishlist">
+  <i class="far fa-heart"></i>
+</button>
+
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-badge">Bestseller</div>
+    <div class="product-image-container">
+      <img src="https://i.pinimg.com/736x/6b/30/73/6b3073597e428dfb697ecdb380f3725c.jpg" alt="Sports T-Shirt" class="product-image" />
+    </div>
+    <div class="product-details">
+      <h3 class="product-title">Sports T-Shirt</h3>
+      <div class="price-section">
+        <p class="product-price">$24.99</p>
+      </div>
+      <div class="rating">★★★★★ <span class="review-count">(342)</span></div>
+      <button class="add-to-cart-btn" onclick="addToCartAndRedirect('Sports T-Shirt')">
+  <i class="fas fa-shopping-cart"></i> Add to Cart
+</button>
+<button class="wishlist-btn" onclick="toggleWishlist('Designer Saree')" title="Add to Wishlist">
+  <i class="far fa-heart"></i>
+</button>
+
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-image-container">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg821wAR5psAf_7JDHGNng-S7-O6OtvfBwJg&s" alt="Western Dress" class="product-image" />
+    </div>
+    <div class="product-details">
+      <h3 class="product-title">Western Dress</h3>
+      <div class="price-section">
+        <p class="product-price">$34.99</p>
+      </div>
+      <div class="rating">★★★★☆ <span class="review-count">(156)</span></div>
+      <button class="add-to-cart-btn" onclick="addToCartAndRedirect('Western Dress')">
+  <i class="fas fa-shopping-cart"></i> Add to Cart
+</button>
+<button class="wishlist-btn" onclick="toggleWishlist('Designer Saree')" title="Add to Wishlist">
+  <i class="far fa-heart"></i>
+</button>
+
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-badge">Kids</div>
+    <div class="product-image-container">
+      <img src="https://www.shutterstock.com/image-photo/young-child-wearing-green-knit-600nw-2610471417.jpg" alt="Kids Hoodie" class="product-image" />
+    </div>
+    <div class="product-details">
+      <h3 class="product-title">Kids Hoodie</h3>
+      <div class="price-section">
+        <p class="product-price">$22.99</p>
+      </div>
+      <div class="rating">★★★★★ <span class="review-count">(98)</span></div>
+      <button class="add-to-cart-btn" onclick="addToCartAndRedirect('Kids Hoodie')">
+  <i class="fas fa-shopping-cart"></i> Add to Cart
+</button>
+<button class="wishlist-btn" onclick="toggleWishlist('Designer Saree')" title="Add to Wishlist">
+  <i class="far fa-heart"></i>
+</button>
+
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-image-container">
+      <img src="https://i.pinimg.com/474x/c7/3c/1d/c73c1d88e0ff11cb515aa6c64467dcfb.jpg" alt="Men's Formal Shirt" class="product-image" />
+    </div>
+    <div class="product-details">
+      <h3 class="product-title">Men's Formal Shirt</h3>
+      <div class="price-section">
+        <p class="product-price">$27.99</p>
+        <p class="original-price">$39.99</p>
+      </div>
+      <div class="rating">★★★☆☆ <span class="review-count">(73)</span></div>
+      <button class="add-to-cart-btn" onclick="addToCartAndRedirect('Men's Formal Shirt')">
+  <i class="fas fa-shopping-cart"></i> Add to Cart
+</button>
+<button class="wishlist-btn" onclick="toggleWishlist('Designer Saree')" title="Add to Wishlist">
+  <i class="far fa-heart"></i>
+</button>
+
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-badge">Popular</div>
+    <div class="product-image-container">
+      <img src="https://i.pinimg.com/236x/31/fb/a0/31fba0584264ade0ca575353df470728.jpg" alt="Women's Blouse" class="product-image" />
+    </div>
+    <div class="product-details">
+      <h3 class="product-title">Women's Blouse</h3>
+      <div class="price-section">
+        <p class="product-price">$19.99</p>
+      </div>
+      <div class="rating">★★★★☆ <span class="review-count">(214)</span></div>
+      <button class="add-to-cart-btn" onclick="addToCartAndRedirect('Women's Blouse')">
+  <i class="fas fa-shopping-cart"></i> Add to Cart
+</button>
+<button class="wishlist-btn" onclick="toggleWishlist('Designer Saree')" title="Add to Wishlist">
+  <i class="far fa-heart"></i>
+</button>
+
+    </div>
+  </div>
+</div>
+  </section>
+
+  <!-- Floating Action Buttons -->
+<!-- Floating Action Buttons -->
+<div class="fab-container">
+  <a href="cart.html" class="fab cart-fab" title="View Cart">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="fab-badge" id="fabCartCount">0</span>
+  </a>
+  <button class="fab chatbot-fab" onclick="toggleChatbot()" title="Chat with us">
+    <i class="fas fa-comments"></i>
+  </button>
+</div>
+
+
+
+  <!-- Enhanced Chatbot -->
+<!-- Enhanced Chatbot -->
+<div class="chatbot-container" id="chatbot">
+  <div class="chatbot-header">
+    <span>Vastraa Assistant</span>
+    <button class="close-chatbot" onclick="toggleChatbot()">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="chatbot-body" id="chat-body">
+    <div class="message bot">
+      Hi there! 👋 I'm your Vastraa shopping assistant. How can I help you today?</div>
+    <div class="quick-replies">
+      <button onclick="sendQuickReply('Track my order')">Track my order</button>
+      <button onclick="sendQuickReply('Return policy')">Return policy</button>
+      <button onclick="sendQuickReply('Show me latest dresses')">Product suggestions</button>
+    </div>
+  </div>
+  <div class="typing-indicator" id="typingIndicator">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+  <div class="chatbot-input">
+    <input type="text" id="chat-input" placeholder="Type your message..." onkeypress="handleChatInputKeypress(event)">
+    <button onclick="sendChat()"><i class="fas fa-paper-plane"></i></button>
+  </div>
+  <div class="quick-replies">
+  <button onclick="sendQuickReply('Track my order')">📦 Track</button>
+  <button onclick="sendQuickReply('Return an item')">↩️ Return</button>
+  <button onclick="sendQuickReply('Show me lehengas')">👗 Lehengas</button>
+</div>
+
+</div>
+
+
+</body>
+</html>

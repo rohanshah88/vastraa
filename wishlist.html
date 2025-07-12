@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Wishlist - Vastraa</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .wishlist-container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .wishlist-title {
+      font-size: 26px;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #212121;
+    }
+
+    .wishlist-empty {
+      text-align: center;
+      font-size: 18px;
+      color: #777;
+    }
+
+    .wishlist-card {
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .wishlist-card h3 {
+      font-size: 18px;
+      color: #333;
+    }
+
+    .remove-btn {
+      background: none;
+      border: none;
+      color: #e53935;
+      cursor: pointer;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wishlist-container">
+    <h2 class="wishlist-title">❤️ My Wishlist</h2>
+    <div id="wishlistItems"></div>
+  </div>
+
+  <script>
+    const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    const container = document.getElementById("wishlistItems");
+
+    if (wishlist.length === 0) {
+      container.innerHTML = "<div class='wishlist-empty'>Your wishlist is empty 😔</div>";
+    } else {
+      wishlist.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "wishlist-card";
+        div.innerHTML = `
+          <h3>${item}</h3>
+          <button class="remove-btn" onclick="removeFromWishlist('${item}')">Remove</button>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    function removeFromWishlist(productId) {
+      const updated = wishlist.filter(item => item !== productId);
+      localStorage.setItem("wishlist", JSON.stringify(updated));
+      location.reload();
+    }
+  </script>
+</body>
+</html>
